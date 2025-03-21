@@ -10,7 +10,7 @@
 # https://github.com/NVIDIA-Omniverse/IsaacGymEnvs/
 # --------------------------------------------------------
 
-seed: ${...seed}
+seed: ${..seed}
 algo: PPO
 
 network:
@@ -18,13 +18,13 @@ network:
     units: [512, 256, 128]
   separate_value_mlp: True
 
-PPO:
-  name: ${resolve_default:LeapHand,${....experiment}}
+ppo:
+  name: ${resolve_default:LeapHand,${...experiment}}
   multi_gpu: False #${....multi_gpu}
   normalize_input: True
   normalize_value: True
   value_bootstrap: True
-  num_actors: ${....task.env.numEnvs}
+  num_actors: ${...task.env.numEnvs}
   reward_scale_value: 0.01
   clip_value_loss: False
   normalize_advantage: True

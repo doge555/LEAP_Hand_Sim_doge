@@ -15,7 +15,7 @@ from isaacgymenvs.utils.utils import set_np_formatting, set_seed
 from ppo.ppo import PPO
 
 
-@hydra.main(config_name='config', config_path='configs')
+@hydra.main(config_name='config', config_path='cfg')
 def main(config: DictConfig):
     if config.checkpoint:
         config.checkpoint = to_absolute_path(config.checkpoint)
