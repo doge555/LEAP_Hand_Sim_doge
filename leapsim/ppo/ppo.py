@@ -2,6 +2,7 @@ import os
 import math
 import time
 import torch
+import gc
 import torch.distributed as dist
 
 import wandb
@@ -12,6 +13,8 @@ from .utils import AverageScalarMeter, RunningMeanStd
 
 from tensorboardX import SummaryWriter
 
+gc.collect()
+torch.cuda.empty_cache()
 
 class PPO(object):
     def __init__(self, env, output_dif, full_config):
