@@ -25,7 +25,10 @@ pip install matplotlib gitpython numpy==1.20.3 wandb
 pip install -e .
 ```
 ## Fuse minimal-stable PPO with LEAP Hand repos
-
+train by runing 
+'''
+python train.py task=LeapHandRot
+'''
 ## Citing
 ```
 @article{
